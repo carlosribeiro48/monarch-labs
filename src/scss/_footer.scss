@@ -1,0 +1,74 @@
+footer {
+  padding: 40px 10px 0 30px;
+  border-top: 1px solid #ffffff;
+  flex-direction: column;
+  height: 400px;
+
+  .input-field {
+    @include flexC;
+    height: 50px;
+    width: 100%;
+    margin-top: 15px;
+
+    input {
+      width: 70%;
+      border: none;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0 2rem;
+      color: #ffffff;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .icon {
+      background: #fca0fe;
+      width: 50px;
+      height: 100%;
+      @include flexCC;
+      cursor: pointer;
+    }
+  }
+
+  .links {
+    margin-top: 20px;
+    li {
+      color: rgba(255, 255, 255, 0.65);
+      cursor: pointer;
+      margin: 1.5rem 0;
+    }
+    li.active {
+      color: #ffffff;
+    }
+  }
+}
+
+@include for-tablet-potrait-up {
+  footer {
+    padding: 0 50px 0 40px;
+    @include flexCB;
+    height: 200px;
+    flex-direction: row;
+
+    .input-field {
+      @include flexCC;
+      height: 40px;
+
+      input {
+        width: 355px;
+      }
+    }
+  }
+}
+
+@include for-tablet-landscape-up {
+}
+
+@include for-desktop-up {
+  footer {
+    padding: 0 220px 0 124px;
+  }
+}
+
+@include for-big-desktop-up {
+}

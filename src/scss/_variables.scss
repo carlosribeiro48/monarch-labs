@@ -1,0 +1,28 @@
+$backgroundColor: #000000;
+$primaryColor: #bb5edc;
+
+@mixin flexC {
+  display: flex;
+  align-items: center;
+}
+@mixin flexCC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexCB {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flexB {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexCA {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

@@ -1,0 +1,286 @@
+header {
+  .welcome {
+    @include flexC;
+    width: 80%;
+
+    .line {
+      width: 64px;
+      margin-right: 18px;
+      border: 1px solid #ffffff;
+    }
+  }
+
+  .header-text {
+    padding-left: 10px;
+    padding-right: 9px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+
+    .box-1 {
+      @include flexB;
+      min-height: 45vh;
+      position: relative;
+      .left {
+        margin-top: 10px;
+        width: 100%;
+
+        h1 {
+          font-weight: 100;
+          padding-top: 80px;
+          line-height: 45px;
+          position: relative;
+          font-size: 32px;
+
+          .union {
+            margin-left: 1rem;
+            position: absolute;
+            top: 70px;
+          }
+          .poss {
+            font-weight: 800;
+          }
+          .purple-text {
+            color: $primaryColor;
+            font-weight: 800 !important;
+          }
+        }
+      }
+      .right {
+        position: absolute;
+        top: 30px;
+        z-index: -2;
+        left: 15%;
+
+        img {
+          width: 90%;
+        }
+      }
+    }
+
+    .box-2 {
+      @include flexB;
+      margin-bottom: 3rem;
+      .left {
+        width: 50%;
+        display: none;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .right {
+        width: 100%;
+        padding-top: 2rem;
+        h5 {
+          width: 95%;
+          margin: auto;
+          line-height: 27px;
+          font-size: 300;
+          font-weight: 100;
+          color: rgba(255, 255, 255, 0.78);
+        }
+
+        .ratings {
+          @include flexCC;
+          width: 50%;
+          margin: 1rem auto;
+
+          img {
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .banner {
+    @include flexCA;
+    height: 68.81px;
+    width: 100%;
+    background: $primaryColor;
+    h4 {
+      font-size: 10px;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@include for-phone-only {
+  header {
+    .header-text {
+      .box-1 {
+        .left {
+          h1 {
+            font-size: 27px;
+          }
+        }
+        .right {
+          img {
+            width: 80%;
+          }
+        }
+      }
+    }
+
+    .banner {
+      h4 {
+        font-size: 8px;
+      }
+    }
+  }
+}
+
+@include for-tablet-potrait-up {
+  header {
+    .welcome {
+      @include flexC;
+      width: 40%;
+      padding-left: 40px;
+      .line {
+        width: 64px;
+        margin-right: 18px;
+        border: 1px solid #ffffff;
+      }
+    }
+
+    .header-text {
+      padding-left: 40px;
+      background: none;
+      .box-1 {
+        @include flexB;
+        min-height: 20vh;
+        .left {
+          margin-top: 33px;
+          width: 50%;
+
+          h1 {
+            padding-top: 0px;
+            line-height: 45px;
+            font-size: 28px;
+            .union {
+              margin-left: 2rem;
+              top: 0px;
+            }
+            .poss {
+              font-weight: 800;
+            }
+            .purple-text {
+              color: $primaryColor;
+              font-weight: 800 !important;
+            }
+          }
+        }
+        .right {
+          position: static;
+          width: 50%;
+        }
+      }
+
+      .box-2 {
+        @include flexB;
+        margin-bottom: 0rem;
+
+        .left {
+          width: 70%;
+          display: block;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        .right {
+          width: 50%;
+          padding-top: 2rem;
+          h5 {
+            width: 100%;
+            margin: auto;
+            line-height: 27px;
+            font-size: 300;
+          }
+
+          .ratings {
+            @include flexCC;
+            width: 50%;
+            margin: 2rem auto 2rem auto;
+
+            img {
+              margin-right: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .banner {
+      height: 68.81px;
+      h4 {
+        font-size: 20px;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@include for-tablet-landscape-up {
+}
+
+@include for-desktop-up {
+  header {
+    .welcome {
+      padding-left: 122px;
+    }
+
+    .header-text {
+      padding-left: 122px;
+      padding-right: 19px;
+      .box-1 {
+        .left {
+          width: 70%;
+          h1 {
+            line-height: 75px;
+            position: static;
+            font-size: 55px;
+
+            .union {
+              margin-left: 4rem;
+              position: static;
+            }
+          }
+        }
+        .right {
+          width: 30%;
+        }
+      }
+
+      .box-2 {
+        .left {
+          width: 50%;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        .right {
+          h5 {
+            width: 75%;
+          }
+
+          .ratings {
+            width: 50%;
+            margin: 4rem auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include for-big-desktop-up {
+}
