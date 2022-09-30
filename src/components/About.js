@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import halfDiamond from "../images/half-diamond.png";
 import halfOrb from "../images/half-orb.png";
 import underline from "../images/underline.png";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const About = () => {
+  const OrbRef = useRef();
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(OrbRef.current, {
+      y: window.innerWidth < 800 ? 350 : 300,
+      scrollTrigger: {
+        trigger: OrbRef.current,
+        start: window.innerWidth < 800 ? "top center" : "top center",
+        toggleActions: "restart reverse none none",
+        scrub: 2,
+      },
+    });
+  });
+
   return (
     <section className='about'>
       <img src={halfDiamond} alt='diamond' className='diamond' />
-      <img src={halfOrb} alt='orb' className='orb' />
+      <img src={halfOrb} alt='orb' className='orb' ref={OrbRef} />
       <h1 className='section-title'>
         About <span> Monarch Labs</span>
       </h1>

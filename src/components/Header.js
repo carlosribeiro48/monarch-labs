@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import union from "../images/Union.png";
 import teseract from "../images/teseract.png";
 import halfPipe from "../images/HalfPipe3.png";
 import ratings from "../images/ratings.png";
 import star from "../images/star.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Header = () => {
+  const unionRef = useRef();
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(unionRef.current, {
+      rotate: 360,
+      duration: 2,
+      scrollTrigger: unionRef.current,
+      repeat: -1,
+    });
+  });
+
   return (
     <header>
       <div className='welcome'>
@@ -18,9 +32,9 @@ const Header = () => {
             <h1>
               Experience the
               <span className='union'>
-                <img src={union} alt='union' />
+                <img src={union} alt='union' className='union' ref={unionRef} />
               </span>
-              <span className='poss'>possibilities of</span>
+              <span className='poss'> possibilities of</span>
               <span className='purple-text'> Blockchain Technolgy</span>{" "}
               firsthand.
             </h1>

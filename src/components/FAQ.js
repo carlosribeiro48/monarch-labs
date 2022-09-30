@@ -1,6 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState, useRef } from "react";
 import { faq } from "../data";
 import diagDown from "../images/diagonal-arrow-down.png";
 
